@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Writer — Hire writers with newsroom credentials</title>
+<meta name="description" content="Content Writer connects companies with proven writers from Reuters, Forbes, BBC and other international publications. Hire a writer, or get hired.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#161512;
+  --paper:#faf7f2;
+  --card:#ffffff;
+  --muted:#6b665c;
+  --line:#e7e1d6;
+  --accent:#0e5e4a;
+  --accent-soft:#e3efe9;
+  --accent-2:#c9451f;
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:20px;font-weight:600}
+.brand .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px}
+.nav-links{display:flex;gap:28px;font-size:14.5px;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:999px;font-size:14.5px;font-weight:600;transition:.2s;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--accent)}
+.btn-ghost{border-color:var(--line);background:#fff}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:#0a4d3c}
+
+/* HERO */
+.hero{padding:88px 0 64px;position:relative;overflow:hidden}
+.hero .kicker{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;margin-bottom:22px}
+.hero h1{font-size:clamp(38px,6vw,64px);line-height:1.08;max-width:820px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p.sub{margin-top:20px;font-size:18px;color:var(--muted);max-width:600px}
+.hero .cta-row{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.hero-note{margin-top:16px;font-size:13.5px;color:var(--muted)}
+
+/* PRESS MARQUEE */
+.press{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-top:56px;overflow:hidden}
+.press-inner{display:flex;gap:56px;align-items:center;justify-content:center;flex-wrap:wrap;font-family:'Fraunces',serif;font-size:17px;color:#a39d8f;white-space:nowrap}
+.press-inner span{opacity:.85}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:52px 0}
+.stat{border-left:2px solid var(--accent);padding-left:16px}
+.stat b{font-family:'Fraunces',serif;font-size:34px;font-weight:600;display:block}
+.stat span{font-size:13.5px;color:var(--muted)}
+
+/* SERVICES */
+section{padding:72px 0}
+.sec-head{max-width:640px;margin-bottom:44px}
+.sec-head .tag{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.sec-head h2{font-size:clamp(28px,4vw,40px);line-height:1.15}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(22,21,18,.07);border-color:#d8d0bf}
+.card .ico{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:16px}
+.card h3{font-size:19px;margin-bottom:8px}
+.card p{font-size:14.5px;color:var(--muted)}
+
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;position:relative}
+.step .num{font-family:'Fraunces',serif;font-size:44px;color:var(--accent);opacity:.28;font-weight:600;line-height:1}
+.step h3{font-size:18px;margin:14px 0 8px}
+.step p{font-size:14.5px;color:var(--muted)}
+
+/* INDUSTRIES */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:10px 18px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:14px;color:var(--muted)}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+
+/* QUOTE */
+.quote{background:var(--ink);color:#f4f1ea;border-radius:24px;padding:56px;position:relative}
+.quote .mark{font-family:'Fraunces',serif;font-size:80px;color:var(--accent-2);line-height:.6;display:block;margin-bottom:24px}
+.quote blockquote{font-family:'Fraunces',serif;font-size:clamp(20px,3vw,28px);line-height:1.4;max-width:760px}
+.quote .who{margin-top:26px;font-size:14px;color:#b9b3a4}
+
+/* DUAL CTA */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{border-radius:24px;padding:44px;display:flex;flex-direction:column;gap:12px}
+.panel h3{font-size:26px}
+.panel p{font-size:15px;opacity:.85}
+.panel .btn{align-self:flex-start;margin-top:auto}
+.panel-dark{background:var(--ink);color:#fff}
+.panel-dark .btn{background:var(--accent-2);color:#fff}
+.panel-dark .btn:hover{background:#a83a19}
+.panel-light{background:var(--accent-soft);color:var(--ink)}
+.panel-light .btn{background:var(--accent);color:#fff}
+.panel-light .btn:hover{background:#0a4d3c}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:48px 0 40px;margin-top:40px}
+.foot{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.foot .brand{font-size:17px;color:var(--ink)}
+.foot-links{display:flex;gap:22px}
+.foot-links a:hover{color:var(--ink)}
+.foot-note{margin-top:28px;font-size:12.5px;color:#a39d8f}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .grid,.steps{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .dual{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .grid,.steps{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hero{padding:56px 0 44px}
+  .quote{padding:36px 26px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="brand"><div class="mark">W</div> Content&nbsp;Writer</div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#industries">Industries</a>
+      <a href="#hire">For writers</a>
+    </div>
+    <div style="display:flex;gap:10px">
+      <a href="#hire" class="btn btn-ghost">Get hired</a>
+      <a href="#hire" class="btn btn-primary">Hire a writer</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">✦ A writers-first content marketplace</div>
+    <h1>Hire writers who've written for <em>Reuters, Forbes&nbsp;and&nbsp;BBC</em>.</h1>
+    <p class="sub">Content Writer matches companies with proven, publication-tested writers across every industry. Vetted work, clear pricing, delivered on deadline.</p>
+    <div class="cta-row">
+      <a href="#hire" class="btn btn-accent">Hire a writer →</a>
+      <a href="#hire" class="btn btn-ghost">I'm a writer, hire me</a>
+    </div>
+    <p class="hero-note">Free scoping call · First draft in 3–5 days · Revisions included</p>
+  </div>
+  <div class="press">
+    <div class="wrap press-inner">
+      <span>Reuters</span><span>Forbes</span><span>BBC</span><span>International publications</span><span>Industry journals</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap stats">
+  <div class="stat reveal"><b>Bylines</b><span>writers with published work in international outlets</span></div>
+  <div class="stat reveal"><b>Fixed quote</b><span>priced before work starts, no hourly surprises</span></div>
+  <div class="stat reveal"><b>Fast drafts</b><span>clear turnaround agreed on the scoping call</span></div>
+  <div class="stat reveal"><b>Original</b><span>human-written work, checked and yours to own</span></div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="tag">Services</div>
+      <h2>One team for every kind of word your business needs.</h2>
+    </div>
+    <div class="grid">
+      <div class="card reveal"><div class="ico">📝</div><h3>Blog &amp; article writing</h3><p>SEO-aware, research-backed posts that read like journalism and rank like content marketing.</p></div>
+      <div class="card reveal"><div class="ico">🎯</div><h3>Copywriting</h3><p>Landing pages, ads and campaigns written to convert, not just to fill space.</p></div>
+      <div class="card reveal"><div class="ico">📄</div><h3>Website content</h3><p>Full-site copy that sounds like you on your best day, structured for clarity.</p></div>
+      <div class="card reveal"><div class="ico">📊</div><h3>Whitepapers &amp; long-form</h3><p>Deep 10,000+ word assets with real sourcing, data and expert interviews.</p></div>
+      <div class="card reveal"><div class="ico">📣</div><h3>PR &amp; press releases</h3><p>Announcements written in newsroom format, ready for pickup.</p></div>
+      <div class="card reveal"><div class="ico">🛒</div><h3>Ecommerce copy</h3><p>Product descriptions that sell the benefit, at catalogue scale.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="tag">How it works</div>
+      <h2>From brief to published copy in three steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">1</div><h3>Book a free call</h3><p>Tell us the audience, the goal and the deadline. We scope it in one 20-minute call and quote a fixed price.</p></div>
+      <div class="step reveal"><div class="num">2</div><h3>Get matched</h3><p>We pair the brief with a writer who has actually published in your industry, not just claimed to.</p></div>
+      <div class="step reveal"><div class="num">3</div><h3>Review &amp; publish</h3><p>First draft in 3–5 days, revisions included. You approve, we deliver clean, ready-to-publish copy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="industries">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="tag">Industries</div>
+      <h2>Writers who already speak your industry.</h2>
+    </div>
+    <div class="chips reveal">
+      <span class="chip">Fintech</span><span class="chip">Healthcare &amp; Medicine</span><span class="chip">SaaS</span><span class="chip">Ecommerce</span><span class="chip">Education</span><span class="chip">IT &amp; Software Development</span><span class="chip">Events</span><span class="chip">News &amp; Media</span><span class="chip">Whitepapers &amp; Research</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="quote reveal">
+      <span class="mark">"</span>
+      <blockquote>Good content is not word count. It is a writer who has covered the beat before, a brief that captures it, and a deadline that is actually kept.</blockquote>
+      <div class="who">The Content Writer standard</div>
+    </div>
+  </div>
+</section>
+
+<section id="hire" style="padding-top:0">
+  <div class="wrap">
+    <div class="dual">
+      <div class="panel panel-dark reveal">
+        <h3>Hiring?</h3>
+        <p>Book a free scoping call. We'll match your brief with writers who have real bylines in your space, and quote a fixed price before any work starts.</p>
+        <a href="mailto:support@contentwriter.org.in" class="btn">Book a free call →</a>
+      </div>
+      <div class="panel panel-light reveal">
+        <h3>Are you a writer?</h3>
+        <p>If you've written for serious publications, we want your portfolio. Join the roster, get matched with briefs that fit your beat, and get paid on time.</p>
+        <a href="mailto:support@contentwriter.org.in?subject=Writer%20application" class="btn">Apply to join →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="brand"><div class="mark">W</div> Content&nbsp;Writer</div>
+      <p style="margin-top:10px;max-width:320px">A platform where companies hire proven writers, and proven writers get hired.</p>
+    </div>
+    <div class="foot-links">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#industries">Industries</a>
+      <a href="mailto:support@contentwriter.org.in">Contact</a>
+    </div>
+  </div>
+  <div class="wrap foot-note">© 2026 Content Writer · support@contentwriter.org.in</div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
