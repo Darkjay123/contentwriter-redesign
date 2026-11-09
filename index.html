@@ -179,11 +179,16 @@ footer{border-top:1px solid var(--line);padding:52px 0 42px;margin-top:40px}
   .nav-links{display:none}
   .steps::before{display:none}
 }
+@media(max-width:900px){
+  .nav-cta .btn-ghost{display:none}
+}
 @media(max-width:640px){
   .grid,.steps{grid-template-columns:1fr}
-  .nav-cta .btn-ghost{display:none}
+  .nav-cta .btn-gold{display:none}
   .burger{display:flex}
   .hero{padding:110px 0 60px}
+  .ghost-words span{font-size:120px}
+  .hero-note{font-size:13px}
   .quote{padding:38px 26px}
   .press .marquee{gap:44px}
   .mq-set{gap:44px}
